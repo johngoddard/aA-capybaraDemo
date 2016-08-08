@@ -10,9 +10,10 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST #create" do
-    it "redirects to goals index on user creation" do
+    it "redirects the user show page user creation" do
       post :create, user: {username: "Henry", password: "password"}
-      expect(response).to redirect_to(goals_url)
+      user = User.find_by(username: "Henry")
+      expect(response).to redirect_to(user_url(user))
     end
     it "render with invalid credentials" do
       post :create, user: {username: "", password: "password"}
