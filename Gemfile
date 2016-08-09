@@ -42,6 +42,7 @@ group :development, :test do
 
   gem 'spring'
   gem 'guard-rspec'
+  gem 'launcy'
 end
 
 group :development do

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       signin!(@user)
-      redirect_to goals_url
+      redirect_to user_url(@user)
     else
       flash.now[:errors] = ["Invalid username or password"]
       render :new

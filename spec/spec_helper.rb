@@ -96,4 +96,15 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  def create_jill_with_goals
+    let(:jill) { User.create!(username: 'jill_bruce', password: 'abcdef') }
+    let(:jill_goal_public) { jill.goals.create!(title: 'Jill Goal',
+                                         description: 'goal desc',
+                                         status: 'active',
+                                         private_goal: false) }
+    let(:jill_goal_private) { jill.goals.create!(title: 'Jill Private Goal',
+                                                description: 'goal desc',
+                                                status: 'active',
+                                                private_goal: true) }
+end
 end

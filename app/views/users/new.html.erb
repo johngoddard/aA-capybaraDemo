@@ -1,1 +1,9 @@
 <h2>New User</h2>
+
+<form action="<%= users_url %>" method="POST">
+  <%= form_token %>
+  <label>Username <input type="text" name="user[username]" value="<%= @user.username %>"></label>
+  <label>Password <input type="password" name="user[password]" value=""></label>
+
+  <input type="submit" value="Create User">
+</form>

@@ -15,6 +15,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.find_by(username: "Henry")
       expect(response).to redirect_to(user_url(user))
     end
+
     it "render with invalid credentials" do
       post :create, user: {username: "", password: "password"}
       expect(response).to render_template("new")
