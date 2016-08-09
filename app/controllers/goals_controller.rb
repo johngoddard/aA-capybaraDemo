@@ -62,6 +62,11 @@ class GoalsController < ApplicationController
     end
   end
 
+  def index
+
+    @goals = Goal.where(private_goal: false)
+  end
+
   private
 
   def goal_params

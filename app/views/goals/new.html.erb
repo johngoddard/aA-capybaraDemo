@@ -7,22 +7,17 @@
   <label>Description
     <textarea name="goal[description]" rows="8" cols="40"><%= @goal.description %></textarea>
   </label>
+
   <label>Status
     <select name="goal[status]" id="StatusSelect">
     <option value="active">Active</option>
     <option value="completed">Completed</option>
     </select>
   </label>
-  <!-- <label>Privacy
-    <select name="goal[private_goal]" id="PrivacySelect">
-    <option value="<%= true %>">Private</option>
-    <option value="<%= false %>">Not Private</option>
-    </select>
-  </label> -->
 
   <label>Privacy
-    <input type="radio" name="goal[private_goal]" value="<%= true %>">Private
-    <input type="radio" name="goal[private_goal]" value="<%= false %>">Not private
+    <label>Private<input type="radio" name="goal[private_goal]" value="true"></label>
+    <label>Public<input type="radio" name="goal[private_goal]" value="false"></label>
   </label>
   <input type="submit" value="Create New Goal">
 </form>
